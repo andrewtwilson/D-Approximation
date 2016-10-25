@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9D629BC7-64AF-4311-B77C-81690BC96550}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>NeuralNetworks</RootNamespace>
+    <AssemblyName>NeuralNetworks</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="NeuroEvo.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Network.cs" />
+    <Compile Include="BackpropNetwork.cs" />
+    <Compile Include="ScaleData.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <ProjectReference Include="..\MathClasses\MathClasses.csproj">
+      <Project>{56596D70-1C0B-4E36-AB61-FB3EDF07832D}</Project>
+      <Name>MathClasses</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataIO\DataIO.csproj">
+      <Project>{891EF2A8-7726-467B-9D18-9437F05ADF7A}</Project>
+      <Name>DataIO</Name>
+    </ProjectReference>
+  </ItemGroup>
+</Project>
